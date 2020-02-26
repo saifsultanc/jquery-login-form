@@ -15,6 +15,15 @@ var Login = function() {
       return "<img class='flag' src='img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
     }
 
+    $('.register-form input').keypress(function(e) {
+      if (e.which == 13) {
+        if ($('.register-form').validate().form()) {
+          $('.register-form').submit();
+        }
+        return false;
+      }
+    });
+
     jQuery('#register-btn').click(function(){
       jQuery('.login-form').hide();
       jQuery('.register-form').show();
