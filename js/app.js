@@ -32,7 +32,22 @@ var Login = function() {
       highlight: function(element) {
         $(element).closest('.form-group').addClass('has-error');
       },
+
+      success: function(label) {
+        label.closest('.form-group').removeClass('has-error');
+        label.remove();
+      },
+
+      errorPlacement: function(error, element) {
+        error.insertAfter(element.closest('.input-icon'));
+      },
+
+      submitHandler: function(form) {
+        form.submit();
+      }
     });
+
+
   }
 
   var handleForgetPassword = function() {
