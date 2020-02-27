@@ -1,7 +1,38 @@
 var Login = function() {
 
   var handleLogin = function() {
+    $('.login-form').validate({
+      errorElement: 'span',
+      errorClass: 'help-block',
+      focusInvalid: false,
+      rules: {
+        username: {
+          required: true
+        },
+        password: {
+          required: true
+        },
+        remember: {
+          required: false
+        }
+      },
+      messages: {
+        username: {
+          required: 'Username is required.'
+        },
+        password: {
+          required: 'Password is required.'
+        }
+      },
 
+      invalidHandler: function(event, validator) {
+        $('.alert-danger', $('.login-form')).show();
+      },
+
+      highlight: function(element) {
+        $(element).closest('.form-group').addClass('has-error');
+      },
+    });
   }
 
   var handleForgetPassword = function() {
