@@ -47,6 +47,14 @@ var Login = function() {
       }
     });
 
+    $('.login-form input').keypress(function (e) {
+      if (e.which == 13) {
+        if ($('.login-form').validate().form()) {
+          $('.login-form').submit();
+        }
+        return false;
+      }
+    });
 
   }
 
