@@ -60,6 +60,12 @@ var Login = function() {
 
   var handleForgetPassword = function() {
 
+    jQuery('#forget-password').click(function() {
+      jQuery('.login-form').hide();
+      jQuery('.forget-form').show();
+    });
+
+    
   }
 
   var handleRegister = function() {
