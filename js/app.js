@@ -60,6 +60,39 @@ var Login = function() {
 
   var handleForgetPassword = function() {
 
+    $('.forget-form').validate({
+      errorElement: 'span',
+      errorClass: 'help-block',
+      focusInvalid: false,
+      ignore: "",
+      rules: {
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        email: {
+          required: "Email field cannot be left blank."
+        }
+      },
+      invalidHandler: function(event, validator) {
+
+      },
+      highlight: function(element) {
+
+      },
+      success: function(label) {
+
+      },
+      errorPlacement: function(error, element) {
+
+      },
+      submitHandler: function(form) {
+
+      }
+    });
+
     jQuery('#forget-password').click(function() {
       jQuery('.login-form').hide();
       jQuery('.forget-form').show();
